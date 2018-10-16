@@ -1,21 +1,18 @@
 <template lang="html">
   <div class="">
     <VNav></VNav>
-    <!-- <div class="container mt-5">
-      <div class="col-12">
-
-      </div>
-    </div> -->
     <router-view></router-view>
-    <v-footer></v-footer>
+    <VFooter></VFooter>
   </div>
 </template>
 
 <script>
-import VNav from '@/components/VNav.vue'
+import VNav from '@/components/shares/VNav.vue'
+import VFooter from '@/components/shares/VFooter.vue'
 export default {
   components: {
-    VNav
+    VNav,
+    VFooter
   }
 }
 </script>

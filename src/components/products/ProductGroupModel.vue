@@ -1,28 +1,29 @@
 <template lang="html">
-  <ul class="list-group list-group-flush " v-if="group.show">
-    <li class="list-group-item " v-for="model in modelByGroup(group.code)">
+  <div class="">
+    <ul class="list-group list-group-flush " v-if="group.show">
+      <li class="list-group-item " v-for="model in modelByGroup(group.code)">
+        <a href="#" @click.prevent="showModal(model.name)" class="text-success">
+          {{model.name}}
+        </a>
+        : {{model.detail}}
+      </li>
+      <li class="list-group-item">
+        <button type="button" class="btn btn-light btn-block" @click="group.show = false">
+          Back
+        </button>
+      </li>
+    </ul>
 
-      <b-modal
-        lazy
-        centered
-        v-model="model.name === selectedModal"
-        @hidden="selectedModal = ''"
-        :title="model.name"
-        hide-footer
-        >
-        <ProductDetail :code="model.name" ></ProductDetail>
-      </b-modal>
+    <b-modal
+      lazy
+      centered
+      v-model="show"
+      :title="selectedName"
+      hide-footer>
+      <ProductDetail :code="selectedName"></ProductDetail>
+    </b-modal>
+  </div>
 
-      <a href="#" @click.prevent="selectedModal = model.name" class="text-success">{{model.name}}</a>
-      : {{model.detail}}
-
-    </li>
-    <li class="list-group-item">
-      <button type="button" class="btn btn-light btn-block" @click="group.show = false">
-        Back
-      </button>
-    </li>
-  </ul>
 </template>
 
 <script>
@@ -31,7 +32,7 @@ export default {
   props: ['group'],
   data () {
     return {
-      selectedModal: '',
+      selectedName: '',
       show: false,
       models:[
         {code:3, name:'G30', photo:'img/portfolio/03-thumbnail.png', to: '/product/G30', detail: 'ใช้กับกระเบื้อง 8x8'},
@@ -44,6 +45,10 @@ export default {
     }
   },
   methods: {
+    showModal (name) {
+      this.selectedName = name
+      this.show = true
+    },
     modelByGroup(code){
       let result = this.models.filter(v=>{
         return v.code === code

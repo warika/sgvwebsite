@@ -4,28 +4,18 @@
       <img class="card-img-top photo-height pointer" :src="group.photo" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">
-
-            <!-- <b-button @click="group.show = true" variant="outline-success">รุ่นเพิ่มเติม</b-button> -->
-            <v-button @click="group.show = true" class="btn btn-outline-light" width="100px">
-              รุ่นเพิ่มเติม
-            </v-button>
-            <i class="fas fa-image fa-2x text-success" @click="modalShow = !modalShow"></i>
-            <i class="fab fa-youtube fa-2x text-danger" @click="youtubeShow = !youtubeShow"></i>
+          <button @click="group.show = true" class="btn btn-outline-light">
+            รุ่นเพิ่มเติม
+          </button>
+          <v-social type="image" @click="modalShow = !modalShow"></v-social>
+          <v-social type="youtube" @click="youtubeShow = !youtubeShow"></v-social>
         </p>
       </div>
     </div>
 
     <template v-for="(groupphoto, i) in filterName()">
       <b-modal title="How To" v-model="youtubeShow" lazy>
-        <b-embed type="iframe"
-          class="pb-2"
-          v-for="vdo in groupphoto.vdos"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          aspect="16by9"
-          :src="vdo.url"
-          allowfullscreen>
-        </b-embed>
+        <v-youtube :src="vdo.url" v-for="vdo in groupphoto.vdos" class="mb-2"></v-youtube>
       </b-modal>
 
       <b-modal  title="Picture" v-model="modalShow" lazy>

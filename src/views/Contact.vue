@@ -1,11 +1,9 @@
 <template lang="html">
   <div class="bg-primary">
     <div class="container pt-5">
+      <v-header title="Contact" subtitle="Make Your Home Better ."></v-header>
+      
       <div class="col-12">
-        <div class=" text-center " >
-              <h2 class="section-heading">Contact</h2>
-              <h3 class="section-subheading text-muted"> Make Your Home Better .</h3>
-        </div>
         <b-card>
           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15513.029936300672!2d100.685474!3d13.5810746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x88cfaf3b53448889!2z4Lia4Lij4Li04Lip4Lix4LiXIOC4l-C4o-C4seC4nuC4ouC5jOC4geC4seC4h-C4p-C4suC4pSDguIjguLPguIHguLHguJQ!5e0!3m2!1sth!2sth!4v1539069789035" width="1035" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
           <b-card-group deck>

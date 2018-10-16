@@ -1,11 +1,9 @@
 <template lang="html">
   <div class="">
     <div class="container pt-5">
+      <v-header title="Product" subtitle="Make Your Home Better ."></v-header>
+
       <div class="col-12">
-        <div class="text-center">
-              <h2 class="section-heading">Product</h2>
-              <h3 class="section-subheading text-muted"> Make Your Home Better .</h3>
-        </div>
         <div class="row">
           <div class="col-sm-6 col-md-4 col-lg-3 mb-4" v-for="(group, i) in groups" :key="i">
             <div class="card custom-height">

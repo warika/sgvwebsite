@@ -2,28 +2,25 @@
   <div class="container">
     <h1 class="section-heading">Hot Items</h1>
     <div class="row">
-      <div class="col-12 col-md-4" v-for="item in items" >
-        <b-card-group >
-            <b-card
-                    :title="item.text"
-                    :img-src="item.photo"
-                    img-alt="Img"
-                    img-top
-                    >
-                <p class="card-text">
-                  qqqqqqqqqqqqqqqqqqqqqq
-                  qqqqqqqqqqqqqqqqqqqqq
-                  qqqqqqppppppppppppppp
-                  pppppppppppppppp
-                  qqqqqq
-                </p>
-            </b-card>
+      <div class="col-12 col-md-4" v-for="item in items">
+        <b-card-group>
+          <b-card
+            :title="item.text"
+            :img-src="item.photo"
+            img-alt="Img"
+            img-top>
+              <p class="card-text">
+                qqqqqqqqqqqqqqqqqqqqqq
+                qqqqqqqqqqqqqqqqqqqqq
+                qqqqqqppppppppppppppp
+                pppppppppppppppp
+                qqqqqq
+              </p>
+          </b-card>
         </b-card-group>
       </div>
-
     </div>
   </div>
-
 </template>
 
 <script>
@@ -41,16 +38,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.card-size{
-
-  width: 18rem;
-}
-.section-heading {
-	color: #343a40;
-  font-size: 40px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
 </style>

@@ -3,13 +3,10 @@
     <footer class=" panel-footer bg-dark">
       <div class="container ">
         <div class="row">
-          <div class="col-md-12 text-center">
-
-
-            <v-socialmediabutton class="mt-3 "></v-socialmediabutton>
-
-
-
+          <div class="col-md-12 text-center pt-3">
+            <a v-for="icon in icons" class="mr-3">
+              <v-social :type="icon"></v-social>
+            </a>
           </div>
         </div>
       </div>
@@ -20,6 +17,16 @@
 
 <script>
 export default {
+  data () {
+    return {
+      icons: [
+        'facebook',
+        'line',
+        'linkedin',
+        'youtube'
+      ]
+    }
+  }
 }
 </script>
 

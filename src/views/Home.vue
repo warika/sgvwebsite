@@ -2,7 +2,6 @@
   <div >
     <v-homeheader></v-homeheader>
     <v-homemiddle></v-homemiddle>
-    <!-- <v-homelower></v-homelower> -->
   </div>
 
 </template>

@@ -1,7 +1,6 @@
 <template lang="html">
 <div class="">
   <b-modal v-model="show" >
-
     <slot > </slot>
   </b-modal>
 </div>
@@ -29,7 +28,7 @@ export default {
           }
         },
         {
-          name:'Aluminium Stair Nosing', 
+          name:'Aluminium Stair Nosing',
           images: {
             thumbs: [
               {'id': 0, 'url': 'img/team/1.jpg'},

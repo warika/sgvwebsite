@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    <b-row v-for="row in filterName()" align-v="center">
+    <b-row align-v="center" v-if="row">
       <b-col cols="7">
         <b-img :src="row.photo" fluid alt="Responsive image" />
       </b-col>
@@ -8,39 +8,27 @@
         <b-img :src="row.drawing" fluid alt="Responsive image" />
       </b-col>
       <b-col cols="12">
-        ความยาว :<span v-for="length in row.lengths">
-            {{length}},
-        </span><br>
-        บรรจุ :<span v-for="pack in row.packs">
-            {{pack}}
-        </span><br>
-        สี :<span >
-            {{row.colors.length}}
-        </span>
-        <div
-          v-for="color in row.colors"
-          class="d-inline-block color-width mr-1"
-          :class="{'pointer': color.image, 'no-image': !color.image}"
-          :style="{'background-color': color.hex}"
-          @click="setImage(row.name, color.image)">
-        </div><br>
+        ความยาว: {{row.lengths.join(', ')}}<br>
+        บรรจุ: {{row.packs.join(', ')}}<br>
+        สี: {{row.colors.length}}
 
-        
+        <VColorPallet
+          :colors="row.colors"
+          :group="row.name"
+          @click="setImage">
+        </VColorPallet>
       </b-col>
     </b-row>
-
   </div>
 </template>
 
 <script>
-
+import VColorPallet from '@/components/carousel/VColorPallet.vue'
 
 export default {
   props: ['code'],
   data () {
     return {
-      // code: this.$route.params.code,
-      selectedModal:'',
       rows:[
         {
           name:'G30',
@@ -71,66 +59,29 @@ export default {
             {code:'bl901', hex:'#000000'},
             {code:'w101', hex:'#000000'}
           ],
-
+          lengths: [],
+          packs: []
         }
       ]
     }
   },
-  methods: {
-    setImage (group, image) {
-      if (!image) return
-      let row = this.rows.find(v => v.name === group)
-      row.photo = image
-    },
-    filterName(){
-      let result = this.rows.filter(v=> {
-        return v.name == this.code
-      })
-      return result
+  computed: {
+    row () {
+      return this.rows.find(v => v.name == this.code)
     }
   },
-  created(){
-    this.filterName()
+  methods: {
+    setImage (data) {
+      if (!data.image) return
+      let row = this.rows.find(v => v.name === data.group)
+      row.photo = data.image
+    }
   },
-
+  components: {
+    VColorPallet
+  }
 }
 </script>
 
 <style lang="css" scoped>
-.drawing-size{
-  width: 100px;
-  height: 80px;
-
-}
-.no-image {
-  opacity: 0.5;
-}
-.color-width {
-  border-radius: 10px;
-  width: 25px;
-  height: 25px;
-}
-.section-heading {
-  font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-.section-subheading {
-  font-size: 16px;
-  font-weight: 400;
-  font-style: italic;
-  margin-bottom: 75px;
-  text-transform: none;
-  font-family: 'Droid Serif';
-}
-.sub-title {
-   opacity: 0.5;
-}
-.custom-height {
-  height: 600px;
-}
-.photo-height {
-  height: 200px;
-  padding: 10px 10px 10px 10px;
-}
 </style>

@@ -5,52 +5,20 @@
       <div class="row">
         <div class="col-6 col-md-3 bg-warning h-full" v-for="item in items">
           <b-card-group @click="goto(item.link)">
-              <b-card overlay
-                      :title="item.text"
-                      :img-src="item.photo"
-                      img-alt="Img"
-                      img-top
-                      >
+              <b-card
+                overlay
+                :title="item.text"
+                :img-src="item.photo"
+                img-alt="Img"
+                img-top
+                >
                   <p class="card-text">
                     click
                   </p>
               </b-card>
           </b-card-group>
         </div>
-        <!-- <div class="col-6 col-md-3 bg-primary h-full">
-
-        </div>
-        <div class="col-6 col-md-3 bg-dark h-full">
-
-        </div>
-        <div class="col-6 col-md-3 bg-primary h-full">
-
-        </div> -->
-
       </div>
-
-
-      <!-- <div class="row">
-        <div class="col-12 col-md-6 bg-warning h-full">
-          <sample-card-image></sample-card-image>
-        </div>
-        <div class="col-12 col-md-6 bg-dark">
-          <div class="row">
-            <div class="col-12 col-md-6 bg-primary h-half">
-              <sample-card-image></sample-card-image>
-            </div>
-            <div class="col-12 col-md-6 bg-warning h-half">
-              <sample-card-image></sample-card-image>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 h-half">
-              <sample-card-image></sample-card-image>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
     </div>
 
   </div>
