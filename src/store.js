@@ -18,6 +18,10 @@ export default new Vuex.Store({
       {code: 9, name:'PVC Skirting Board', photo:'img/portfolio/09-thumbnail.png', page: '/product/pvcskirtingboard', show: false},
       {code: 10, name:'PVC Wire Way', photo:'img/portfolio/10-thumbnail.png', page: '/product/pvcwireway', show: false},
       {code: 11, name:'PVC Multi-Purpose Mat', photo:'img/portfolio/11-thumbnail.png', page: '/product/pvcmultipurposemat', show: false}
+    ],
+    images: [
+      {text: 'A', src: 'img/product/G30.png'},
+      {text: 'B', src: 'img/product/G30DRAWING.png'}
     ]
   },
   mutations: {

@@ -1,4 +1,28 @@
 <template lang="html">
+  <!-- <v-toolbar color="primary" app>
+    <v-toolbar-side-icon></v-toolbar-side-icon>
+
+    <v-toolbar-title class="white--text">Title</v-toolbar-title>
+
+    <v-spacer></v-spacer>
+
+    <v-btn icon>
+      <v-icon>search</v-icon>
+    </v-btn>
+
+    <v-btn icon>
+      <v-icon>apps</v-icon>
+    </v-btn>
+
+    <v-btn icon>
+      <v-icon>refresh</v-icon>
+    </v-btn>
+
+    <v-btn icon>
+      <v-icon>more_vert</v-icon>
+    </v-btn>
+  </v-toolbar> -->
+
   <b-navbar class="shadow" toggleable="md" type="dark" variant="danger" sticky>
     <div class="container ">
     <b-navbar-toggle target="nav_collapse" ></b-navbar-toggle>
@@ -30,33 +54,7 @@
     </b-collapse>
     </div>
   </b-navbar>
-
-
-
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <router-link
-            :to="item.to"
-            v-for="(item, i) in items"
-            :key="i" tag="li"
-            active-class="active"
-            class="nav-item">
-            <a class="nav-link">
-              {{item.name}}
-            </a>
-          </router-link>
-        </ul>
-      </div>
-    </div>
-
-  </nav> -->
+  
 </template>
 
 <script>
@@ -80,15 +78,10 @@ export default{
 
 <style lang="css" scoped>
 .shadow {
-  width: 100%;
-  display: inline-block;
-  float: left;
 
 }
 .nav-font{
   font-family: 'Anton', sans-serif;
   font-weight: 35px;
 }
-
-
 </style>

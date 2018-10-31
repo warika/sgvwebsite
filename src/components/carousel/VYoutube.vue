@@ -3,7 +3,7 @@
     type="iframe"
     frameborder="0"
     allow="autoplay; encrypted-media"
-    aspect="16by9"
+    :aspect="aspect"
     :src="src"
     :allowfullscreen="!disableFullscreen">
   </b-embed>
@@ -20,6 +20,11 @@ export default {
     disableFullscreen: {
       type: Boolean,
       requried: false
+    },
+    aspect: {
+      type: String,
+      required: false,
+      default: '16by9'
     }
   }
 }

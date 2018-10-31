@@ -3,9 +3,8 @@
     <div
       v-for="color in colors"
       class="d-inline-block color-width mr-1 pointer"
-      :class="isImage(color)"
-      :style="{'background-color': color.hex}"
-      @click="emitClick(color)">
+      :style="{'background-color': color.hex}"><br>
+      <small class="font-small">{{color.name}}</small>
     </div>
   </div>
 </template>
@@ -13,37 +12,51 @@
 <script>
 export default {
   name: 'VColorPallet',
-  props: {
-    group: {
-      type: String,
-      required: true
-    },
-    colors: {
-      type: Array,
-      required: true
-    }
-  },
-  methods: {
-    isImage (color) {
-      if (color.image) return ['pointer']
-      else return ['no-image']
-    },
-    emitClick (color) {
-      if (color.image) {
-        this.$emit('click', {group: this.group, image: color.image})
-      }
+  data () {
+    return {
+      colors: [
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'},
+        {hex:'#000000', name:'BL901'}
+      ]
     }
   }
 }
 </script>
 
 <style lang="css" scoped>
+.font-small{
+  font-size: 10px
+}
 .no-image {
   opacity: 0.5;
 }
 .color-width {
   border-radius: 10px;
-  width: 25px;
+  width: 30px;
   height: 25px;
 }
 </style>

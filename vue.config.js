@@ -4,7 +4,7 @@ module.exports = {
   assetsDir: undefined,
   runtimeCompiler: undefined,
   productionSourceMap: undefined,
-  parallel: undefined,
+
   // css: {
   //   loaderOptions: {
   //     sass: {
@@ -14,4 +14,7 @@ module.exports = {
   //     }
   //   }
   // }
+  parallel: undefined,
+
+  css: undefined
 }

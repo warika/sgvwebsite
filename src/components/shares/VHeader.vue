@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="col-12 text-center">
     <h2 class="section-heading">{{title}}</h2>
-    <h3 class="section-subheading text-muted">{{subtitle}}</h3>
+
   </div>
 </template>
 
@@ -13,13 +13,26 @@ export default {
       type: String,
       required: true
     },
-    subtitle: {
-      type: String,
-      required: true
-    }
   }
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+.section-heading {
+  font-size: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: 'Droid Serif';
+}
+.section-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 75px;
+  text-transform: none;
+  font-family: 'Droid Serif';
+}
+.sub-title {
+   opacity: 0.5;
+}
 </style>

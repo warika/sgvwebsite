@@ -5,8 +5,8 @@
     controls
     indicators
     background="#ababab"
-    img-width="1024"
-    img-height="480"
+    :img-width="width"
+    :img-height="height"
     v-model="slide"
     :interval="interval"
     >
@@ -38,6 +38,16 @@ export default {
       type: Number,
       required: false,
       default: 0
+    },
+    width: {
+      type: String,
+      required: false,
+      default: '100'
+    },
+    height: {
+      type: String,
+      required: false,
+      default: '100'
     }
   },
   data () {

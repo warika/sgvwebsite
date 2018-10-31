@@ -1,28 +1,31 @@
 <template lang="html">
   <div class="">
-    <div class="container pt-5">
-      <v-header title="Product" subtitle="Make Your Home Better ."></v-header>
+   <div class="container">
 
-      <div class="col-12">
-        <div class="row">
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-4" v-for="(group, i) in groups" :key="i">
-            <div class="card custom-height">
-              <ProductGroup :group="group" v-if="!group.show"></ProductGroup>
-              <ProductGroupModel :group="group" v-if="group.show"></ProductGroupModel>
-            </div>
-          </div>
+     <v-header title="Product" subtitle="Make Your Home Better ."></v-header>
+       <div class="row">
+        <div class="col-md-6 col-lg-6 col-xs-12 space" v-for="n in 11" :key="n">
+            <ProductGroupTabs></ProductGroupTabs>
         </div>
+
+          <!-- <div class="d-sm-block col-md-6 col-lg-6 " v-for="n in 5" :key="n">
+              <ProductGroup></ProductGroup>
+          </div>
+
+
+        <div class="d-md-none d-lg-none" v-for="n in 5" :key="n">
+            <ProductGroupTabs></ProductGroupTabs>
+        </div> -->
       </div>
-   </div>
   </div>
+ </div>
+
 </template>
 
 <script>
 import ProductGroup from '@/components/products/ProductGroup.vue'
-import ProductGroupModel from '@/components/products/ProductGroupModel.vue'
-import ProductDetail from '@/components/products/ProductDetail.vue'
-
-
+import ProductGroupTabs from '@/components/products/ProductGroupTabs.vue'
+import VFilter from '@/components/filters/VFilter.vue'
 export default {
   data () {
     return {
@@ -46,20 +49,17 @@ export default {
   },
   components: {
     ProductGroup,
-    ProductGroupModel,
-    ProductDetail
-
+    ProductGroupTabs,
+    VFilter
   }
 }
 </script>
 
 <style lang="css" scoped>
+.space{
 
-.grow { transition: all .3s ease-in-out; }
-.grow:hover { transform: scale(1.05); }
-
-.custom-height {
-  height: 300px;
-  background-image: radial-gradient(circle, 	#F8F8F8, 	#E0E0E0);
+  margin-top: 10px;
+  margin-bottom: 40px
 }
+
 </style>

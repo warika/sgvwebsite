@@ -1,46 +1,24 @@
 <template lang="html">
-  <div class="container">
-    <h1 class="section-heading">Home Ideas</h1>
-    <div class="col-12 section-bottom">
-      <div class="row">
-        <div class="col-6 col-md-3 bg-warning h-full" v-for="item in items">
-          <b-card-group @click="goto(item.link)">
-              <b-card
-                overlay
-                :title="item.text"
-                :img-src="item.photo"
-                img-alt="Img"
-                img-top
-                >
-                  <p class="card-text">
-                    click
-                  </p>
-              </b-card>
-          </b-card-group>
+  <div class="hm-gradient">
+    <div class="container ">
+      <v-header title="Gallery" ></v-header>
+      <div class="row ">
+        <div class="col-lg-3 padding btn" v-for="n in 4" :key="n">
+          <b-img
+            :src="'img/gallery/imggallery' + n + '.jpg'"
+            fluid>
+          </b-img>
         </div>
       </div>
     </div>
-
   </div>
-
 </template>
 
 <script>
 export default {
   data(){
     return{
-      items:[
-        { photo:'https://www.banidea.com/wp-content/uploads/2011/12/Home-Interior-Modern-Nature-Design-1.jpg',text:'CT6',link:'https://www.banidea.com/home-interior-modern-nature-design/'},
-        { photo:'img/portfolio/08-thumbnail.png',text:'CT6',link:'https://www.banidea.com/home-interior-modern-nature-design/'},
-        { photo:'img/portfolio/08-thumbnail.png',text:'CT6',link:'https://www.banidea.com/home-interior-modern-nature-design/'},
-        { photo:'img/portfolio/08-thumbnail.png',text:'CT6',link:'https://www.banidea.com/home-interior-modern-nature-design/'},
-      ]
-    }
 
-  },
-  methods:{
-    goto(link){
-      window.open(link);
     }
   }
 }
@@ -48,20 +26,26 @@ export default {
 
 <style lang="css" scoped>
 
-.h-full {
-  height: 400px;
+.padding{
+  padding: 0px !important;
 }
-.h-half {
-  height: 200px;
+.hm-gradient {
+  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+  padding-top: 3em;
+  padding-bottom: 10em;
 }
-.section-heading {
-	color: #343a40;
-  font-size: 40px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
+.mb{
+  margin-bottom: 7em;
 }
-.section-bottom{
-  margin-bottom: 100px;
+.btn {
+  background-color: none;
+  color: white;
+  opacity: 0.6;
+  transition: 0.3s;
 }
+
+.btn:hover {
+  opacity: 1
+}
+
 </style>

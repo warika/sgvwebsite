@@ -8,6 +8,7 @@ import VSocial from '@/components/buttons/VSocial.vue'
 import VHomeHeader from '@/components/homes/VHomeHeader.vue'
 import VHomeMiddle from '@/components/homes/VHomeMiddle.vue'
 import VHomeLower from '@/components/homes/VHomeLower.vue'
+import VHomeMiddleLower from '@/components/homes/VHomeMiddleLower.vue'
 
 const myPlugin = {
   install (Vue) {
@@ -21,6 +22,8 @@ const myPlugin = {
     Vue.component('v-homeheader', VHomeHeader)
     Vue.component('v-homemiddle', VHomeMiddle)
     Vue.component('v-homelower', VHomeLower)
+    Vue.component('v-homemiddlelower', VHomeMiddleLower)
+
   }
 }
 
